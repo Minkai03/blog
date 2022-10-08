@@ -31,5 +31,9 @@ public function peliculas(){
 
 }
 
+public function codigos(){
+    return $this->hasOne(codigos::class);
+ }
+
      
 }

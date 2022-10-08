@@ -15,7 +15,7 @@ class beneficio extends Model
      }
 
       //relacion uno a uno
-    public function codigos(){
+    /* public function codigos(){
         return $this->hasOne(codigos::class);
-     }
+     } */
 }

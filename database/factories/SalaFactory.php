@@ -1,14 +1,14 @@
 <?php
 
 namespace Database\Factories;
-
-use App\Models\b_image;
+use App\Models\sala;
 use Illuminate\Database\Eloquent\Factories\Factory;
-
+use App\Models\butaca;
+use Illuminate\Support\Str;
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Model>
  */
-class B_imagesFactory extends Factory
+class SalaFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -17,8 +17,12 @@ class B_imagesFactory extends Factory
      */
     public function definition()
     {
+        $nombre=$this->faker->unique()->sentence();
+
         return [
-           'url' => 'promos/' . $this->faker->image('public/storage/promos', 640, 480, null, false)
+            'sala' => $nombre,
+            'slug' => Str::slug($nombre),
+            'butacas_id' => Butaca::all()->random()->id
         ];
     }
 }

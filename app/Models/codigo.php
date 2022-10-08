@@ -10,8 +10,8 @@ class codigo extends Model
     use HasFactory;
 
     //relacion uno a uno
-    public function beneficios(){
-        return $this->hasOne(beneficios::class);
+    public function ticket(){
+        return $this->hasOne(ticket::class);
      }
 
 }

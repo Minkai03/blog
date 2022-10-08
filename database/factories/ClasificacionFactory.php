@@ -22,10 +22,11 @@ class ClasificacionFactory extends Factory
 
         $nombre=$this->faker->unique()->sentence();
 
+
         return [
             'nombre' => $nombre,
             'slug' => Str::slug($nombre),
-            'descripcion' => $this->faker->text(500)
+            'descripcion' => $this->faker->text(1000)
         ];
     }
 }

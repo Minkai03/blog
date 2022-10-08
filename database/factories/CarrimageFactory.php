@@ -10,7 +10,7 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Model>
  */
-class CarrimagesFactory extends Factory
+class CarrimageFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -20,8 +20,8 @@ class CarrimagesFactory extends Factory
     public function definition()
     {
         return [
-            'b_image_id' => b_image::all()->random()->id,
-            'p_image_id' => p_image::all()->random()->id
+            'b_image_id' => B_image::all()->random()->id,
+            'p_image_id' => P_image::all()->random()->id
         ];
     }
 }

@@ -16,8 +16,9 @@ return new class extends Migration
         Schema::create('promos', function (Blueprint $table) {
             $table->id();
             $table->string('nombre');
+            $table->string('slug');
             $table->string('precio');
-            $table->string('descripcion');
+            $table->longText('descripcion');
             $table->unsignedBigInteger('b_images_id');
             $table->foreign('b_images_id')->references('id')->on('b_images')->onDelete('cascade');
             $table->timestamps();

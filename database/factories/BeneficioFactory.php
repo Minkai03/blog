@@ -2,14 +2,14 @@
 
 namespace Database\Factories;
 
-use App\Models\genero;
+use App\Models\beneficio;
 use Illuminate\Database\Eloquent\Factories\Factory;
-Use Illuminate\Support\Str;
+use Illuminate\Support\Str;
 
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Model>
  */
-class GenerosFactory extends Factory
+class BeneficioFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -19,11 +19,12 @@ class GenerosFactory extends Factory
     public function definition()
     {
 
-        $nombre=$this->faker->unique()->word(100);
+        $nombre=$this->faker->unique()->sentence();
 
         return [
             'nombre' => $nombre,
-            'slug' => Str::slug($nombre)
+            'slug' => Str::slug($nombre),
+            'descripcion' => $this->faker->text(500)
         ];
     }
 }

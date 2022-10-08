@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::create('codigos', function (Blueprint $table) {
             $table->id();
-            $table->string('nombre');
             $table->string('codigo');
+            $table->string('slug');
             $table->timestamps();
         });
     }

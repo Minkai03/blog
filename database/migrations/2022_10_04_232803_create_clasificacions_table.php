@@ -16,7 +16,8 @@ return new class extends Migration
         Schema::create('clasificacions', function (Blueprint $table) {
             $table->id();
             $table->string('nombre');
-            $table->string('descripcion');
+            $table->string('slug');
+            $table->longText('descripcion');
             $table->timestamps();
         });
     }

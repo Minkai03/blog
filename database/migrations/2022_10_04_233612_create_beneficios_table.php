@@ -16,12 +16,13 @@ return new class extends Migration
         Schema::create('beneficios', function (Blueprint $table) {
             $table->id();
             $table->string('nombre');
+            $table->string('slug');
             $table->longtext('descripcion');
             $table->timestamps();
 
 
-            $table->unsignedBigInteger('codigos_id');
-            $table->foreign('codigos_id')->references('id')->on('codigos')->onDelete('cascade');
+           /*  $table->unsignedBigInteger('codigos_id');
+            $table->foreign('codigos_id')->references('id')->on('codigos')->onDelete('cascade'); */
         });
     }
 

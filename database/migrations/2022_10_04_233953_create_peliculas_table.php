@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('peliculas', function (Blueprint $table) {
             $table->id();
             $table->string('nombre');
+            $table->string('slug');
             $table->longtext('sinopsis');
             $table->text('director');
             $table->longtext('reparto');

@@ -1,14 +1,15 @@
 <?php
 
 namespace Database\Factories;
-use App\Models\sala;
+
+use App\Models\codigo;
 use Illuminate\Database\Eloquent\Factories\Factory;
-use App\Models\butaca;
 use Illuminate\Support\Str;
+
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Model>
  */
-class SalasFactory extends Factory
+class CodigoFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -17,12 +18,10 @@ class SalasFactory extends Factory
      */
     public function definition()
     {
-        $nombre=$this->faker->unique()->sentence();
-
+        $codigo=$this->faker->unique()->word();
         return [
-            'nombre' => $nombre,
-            'slug' => Str::slug($nombre),
-            'butaca_id' => butaca::all()->random()->id
+            'codigo' => $codigo,
+            'slug' => Str::slug($codigo)
         ];
     }
 }

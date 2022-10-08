@@ -2,12 +2,14 @@
 
 namespace Database\Factories;
 
+use App\Models\genero;
 use Illuminate\Database\Eloquent\Factories\Factory;
+Use Illuminate\Support\Str;
 
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Model>
  */
-class HorariosFactory extends Factory
+class GeneroFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -16,8 +18,12 @@ class HorariosFactory extends Factory
      */
     public function definition()
     {
+
+        $nombre=$this->faker->unique()->word(100);
+
         return [
-            //
+            'nombre' => $nombre,
+            'slug' => Str::slug($nombre)
         ];
     }
 }

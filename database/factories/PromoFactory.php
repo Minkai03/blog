@@ -2,14 +2,15 @@
 
 namespace Database\Factories;
 
-use App\Models\butaca;
+use App\Models\b_image;
+use App\Models\promo;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
 
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Model>
  */
-class ButacasFactory extends Factory
+class PromoFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -23,7 +24,9 @@ class ButacasFactory extends Factory
         return [
             'nombre' => $nombre,
             'slug' => Str::slug($nombre),
-            'butacas' => $this->faker->randomElement([1, 2])
+            'precio' => $this->faker->text(10),
+            'descripcion' => $this->faker->text(500),
+            'b_images_id' => b_image::Factory()->create()->id
         ];
     }
 }

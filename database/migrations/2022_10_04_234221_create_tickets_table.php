@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('tickets', function (Blueprint $table) {
             $table->id();
             $table->string('entrada');
+            $table->string('slug');
             $table->string('precio');
             $table->timestamps();
 
@@ -31,6 +32,9 @@ return new class extends Migration
             $table->unsignedBigInteger('users_id');
             $table->foreign('users_id')->references('id')->on('users')->onDelete('cascade');
           
+            $table->unsignedBigInteger('codigos_id');
+            $table->foreign('codigos_id')->references('id')->on('codigos')->onDelete('cascade'); 
+        
         });
     }
 

@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('butacas', function (Blueprint $table) {
             $table->id();
             $table->string('nombre');
+            $table->string('slug');
             $table->enum('disponible', [1, 2])->default(1);
             $table->timestamps();
         });

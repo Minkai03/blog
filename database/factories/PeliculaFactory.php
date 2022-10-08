@@ -14,7 +14,7 @@ use Illuminate\Support\Str;
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Model>
  */
-class PeliculasFactory extends Factory
+class PeliculaFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -33,11 +33,11 @@ class PeliculasFactory extends Factory
             'reparto' => $this->faker->text(1000),
             'duracion' => $this->faker->time(2),
             'trailer_url' => $this->faker->text(500),
-            'sala_id' => sala::all()->random()->id,
-            'genero_id' => genero::all()->random()->id,
-            'clasificacion_id' => clasificacion::all()->random()->id,
-            'p_image_id' => p_image::all()->random()->id,
-            'horario_id' => horario::all()->random()->id
+            'salas_id' => Sala::all()->random()->id,
+            'generos_id' => Genero::all()->random()->id,
+            'clasificacions_id' => Clasificacion::all()->random()->id,
+            'p_images_id' => p_image::Factory()->create()->id,
+            'horarios_id' => Horario::all()->random()->id
         ];
     }
 }

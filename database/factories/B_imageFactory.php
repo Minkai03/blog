@@ -2,14 +2,14 @@
 
 namespace Database\Factories;
 
-use App\Models\codigo;
-use Illuminate\Database\Eloquent\Factories\Factory;
+use App\Models\b_image;
 use Illuminate\Support\Str;
+use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Model>
  */
-class CodigosFactory extends Factory
+class b_imageFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -18,12 +18,9 @@ class CodigosFactory extends Factory
      */
     public function definition()
     {
-        $nombre=$this->faker->unique()->sentence();
-
         return [
-            'nombre' => $nombre,
-            'slug' => Str::slug($nombre),
-            'codigo' => $this->faker->enum(5)
+           
+           'url' => 'promos/' . $this->faker->image('public/storage/promos', 640, 480, null, false)
         ];
     }
 }

@@ -2,14 +2,14 @@
 
 namespace Database\Factories;
 
-use App\Models\beneficio;
+use App\Models\butaca;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
 
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Model>
  */
-class BeneficiosFactory extends Factory
+class ButacaFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -18,13 +18,12 @@ class BeneficiosFactory extends Factory
      */
     public function definition()
     {
-
         $nombre=$this->faker->unique()->sentence();
 
         return [
             'nombre' => $nombre,
             'slug' => Str::slug($nombre),
-            'descripcion' => $this->faker->text(500)
+            'disponible' => $this->faker->randomElement([1, 2])
         ];
     }
 }
