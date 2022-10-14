@@ -2,6 +2,10 @@
 
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Admin\HomeController;
+
+<<<<<<< Updated upstream
+Route::get('', [HomeController::class, 'index'])->name('admin.home');
+=======
 
 Route::get('', [HomeController::class, 'index'])->name('admin.home');
+>>>>>>> Stashed changes
