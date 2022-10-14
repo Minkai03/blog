@@ -11,6 +11,11 @@ class clasificacion extends Model
 
     protected $fillable = ['name', 'slug'];
 
+    public function getRouteKeyName()
+    {
+        return "slug";
+    }
+
     //relacion uno a muchos
     public function peliculas(){
         return $this->hasMany(peliculas::class);

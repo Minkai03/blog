@@ -7,6 +7,13 @@
 @stop
 
 @section('content')
+
+    @if (session('info'))
+    <div class="alert alert-success">
+        <strong>{{session('info')}}</strong>
+    </div>        
+    @endif
+
     <div class="card">
         <div class="card-header">
             <a class="btn btn-secondary" href="{{route(admin.clasificacion.create)}}">Crear nueva clasificación</a>

@@ -93,6 +93,7 @@ class ClasificacionController extends Controller
      */
     public function destroy(clasificacion $clasificacion)
     {
-        //
+        $clasificacion->delete();
+        return redirect()->route(admin.clasificacion.index)->with('info', 'La clasificacion se elimino con exito');
     }
 }
