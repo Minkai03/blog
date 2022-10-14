@@ -29,6 +29,8 @@ class DatabaseSeeder extends Seeder
         Storage::makeDirectory('public/peliculas');
         Storage::makeDirectory('public/promos');
 
+        $this->call(RoleSeeder::class);
+
         Genero::factory(5)->create();
        Clasificacion::factory(4)->create();
        Horario::factory(8)->create();
