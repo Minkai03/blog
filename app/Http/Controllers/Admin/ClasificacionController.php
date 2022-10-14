@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\clasificacion;
 
 class ClasificacionController extends Controller
 {
@@ -14,7 +15,8 @@ class ClasificacionController extends Controller
      */
     public function index()
     {
-        //
+        $clasificacions=clasificacion::all();
+        return view('admin.clasificacion.index',compact('clasificacion'));
     }
 
     /**
@@ -24,7 +26,7 @@ class ClasificacionController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.clasificacion.create');
     }
 
     /**
@@ -35,7 +37,12 @@ class ClasificacionController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'nombre'=>'required',
+            'slug'=>'required|unique:clasificacions'
+
+        ]);
+        return $request->all();
     }
 
     /**
@@ -44,9 +51,9 @@ class ClasificacionController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(clasificacion $clasificacion)
     {
-        //
+        return view('admin.clasificacion.show', compact('clasificacion'));
     }
 
     /**
@@ -55,9 +62,9 @@ class ClasificacionController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(clasificacion $clasificacion)
     {
-        //
+        return view('admin.clasificacion.edit', compact('clasificacion'));
     }
 
     /**
@@ -67,7 +74,7 @@ class ClasificacionController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, clasificacion $clasificacion)
     {
         //
     }
@@ -78,7 +85,7 @@ class ClasificacionController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(clasificacion $clasificacion)
     {
         //
     }

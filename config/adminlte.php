@@ -313,10 +313,15 @@ return [
         ],
         [
             'text'        => 'Dashboard',
-            'url'         => 'admin',
+            'route'         => 'admin.home',
             'icon'        => 'fa-solid fa-gauge-high fa-fw',
         ],
         ['header' => 'Peliculas'],
+        [
+            'text' => 'Clasificación',
+            'route'  => 'admin.clasificacion.index',
+            'icon' => 'fa-solid fa-table-columns fa-fw',
+        ],
         [
             'text' => 'Cartelera',
             'url'  => 'admin/settings',
@@ -327,8 +332,19 @@ return [
             'url'  => 'admin/settings',
             'icon' => 'fa-solid fa-table-columns fa-fw',
         ],
+        ['header' => 'Precios y beneficios'],
         [
-            'text' => 'Clasificación',
+            'text' => 'Promos',
+            'url'  => 'admin/settings',
+            'icon' => 'fa-solid fa-table-columns fa-fw',
+        ],
+        [
+            'text' => 'Beneficios',
+            'url'  => 'admin/settings',
+            'icon' => 'fa-solid fa-table-columns fa-fw',
+        ],
+        [
+            'text' => 'Entrada',
             'url'  => 'admin/settings',
             'icon' => 'fa-solid fa-table-columns fa-fw',
         ],

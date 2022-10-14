@@ -2,10 +2,8 @@
 
 
 use Illuminate\Support\Facades\Route;
-
-<<<<<<< Updated upstream
-Route::get('', [HomeController::class, 'index'])->name('admin.home');
-=======
+use App\Http\Controllers\Admin\HomeController;
+use App\Http\Controllers\Admin\ClasificacionController;
 
 Route::get('', [HomeController::class, 'index'])->name('admin.home');
->>>>>>> Stashed changes
+Route::resource('clasificacion', ClasificacionController::class)->'admin.clasificacion';

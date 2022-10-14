@@ -9,6 +9,8 @@ class clasificacion extends Model
 {
     use HasFactory;
 
+    protected $fillable = ['name', 'slug'];
+
     //relacion uno a muchos
     public function peliculas(){
         return $this->hasMany(peliculas::class);
