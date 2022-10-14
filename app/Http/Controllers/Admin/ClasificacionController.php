@@ -42,7 +42,8 @@ class ClasificacionController extends Controller
             'slug'=>'required|unique:clasificacions'
 
         ]);
-        return $request->all();
+        $clasificacion= clasificacion::create($request->all());
+        return redirect()->route('admin.clasificacion.edit', $clasificacion);
     }
 
     /**
@@ -76,7 +77,12 @@ class ClasificacionController extends Controller
      */
     public function update(Request $request, clasificacion $clasificacion)
     {
-        //
+        $request->validate([
+            'nombre'=>'required',
+            'slug'=>"required|unique:clasificacions,slug,$clasificacion->id"
+        ]);
+        $clasificacion->update($request->all());
+        return redirect()->route('admin.clasificacion.edit', $clasificacion)->with('info', 'La clasificacion se actualizo con exito');
     }
 
     /**

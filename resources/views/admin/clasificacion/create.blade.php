@@ -21,12 +21,12 @@
                 </div>
                 <div class="form-group">
                     {!! Form::label('slug', 'slug') !!}
-                    {!! Form::text('slug', null, ['class'=>'form-control']) !!}
+                    {!! Form::text('slug', null, ['class'=>'form-control', 'placeholder'=>'Ingrese el nombre de la clasificación', 'readonly']) !!}
                 </div>
                 @error('slug')
                     <span class="text-danger">{{$message}}</span>
                 @enderror
-                {!! Form::submit('Crear clasificación', ['class'=>'btn btn-primary', 'placeholder'=>'Ingrese el nombre de la clasificación', 'readonly']) !!}
+                {!! Form::submit('Crear clasificación', ['class'=>'btn btn-primary']) !!}
             {!! Form::close() !!}
         </div>
     </div>
