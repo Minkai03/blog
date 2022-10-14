@@ -15,8 +15,8 @@ class ClasificacionController extends Controller
      */
     public function index()
     {
-        $clasificacions=clasificacion::all();
-        return view('admin.clasificacion.index',compact('clasificacion'));
+        $clasificaciones = clasificacion::all();
+        return view('admin.clasificacion.index')->with('$clasificaciones');
     }
 
     /**
@@ -40,9 +40,8 @@ class ClasificacionController extends Controller
         $request->validate([
             'nombre'=>'required',
             'slug'=>'required|unique:clasificacions'
-
         ]);
-        $clasificacion= clasificacion::create($request->all());
+        $clasificacion = clasificacion::create($request->all());
         return redirect()->route('admin.clasificacion.edit', $clasificacion);
     }
 
@@ -94,6 +93,6 @@ class ClasificacionController extends Controller
     public function destroy(clasificacion $clasificacion)
     {
         $clasificacion->delete();
-        return redirect()->route(admin.clasificacion.index)->with('info', 'La clasificacion se elimino con exito');
+        return redirect('admin.clasificacion.index')->with('info', 'La clasificacion se elimino con exito');
     }
 }

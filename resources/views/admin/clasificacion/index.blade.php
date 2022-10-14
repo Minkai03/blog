@@ -16,7 +16,7 @@
 
     <div class="card">
         <div class="card-header">
-            <a class="btn btn-secondary" href="{{route(admin.clasificacion.create)}}">Crear nueva clasificación</a>
+            <a class="btn btn-secondary" href={{route(admin.clasificacion.create)}}>Crear nueva clasificación</a>
         </div>
         <div class="card-body">
             <table class="table table-striped">
@@ -28,11 +28,11 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($clasificacions as $clasificacion)
+                    @foreach ($clasificaciones as $clasificacion)
                     <tr>
                         <td>{{$clasificacion->id}}</td>
                         <td>{{$clasificacion->nombre}}</td>
-                        <td width="10px"><a class="btn btn-primary btn-sm" href="{{route('admin.category.edit', $clasificacion)}}">Editar</a>
+                        <td width="10px"><a class="btn btn-primary btn-sm" href="{{route('admin.clasificacion.edit', $clasificacion)}}">Editar</a>
                         </td>
                         <td width="10px">
                             <form action="{{route('admin.clasificacion.destroy', $clasificacion)}}" method="POST">
