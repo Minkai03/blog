@@ -10,4 +10,4 @@ use App\Http\Controllers\Admin\PeliculaController;
 
 
 Route::get('', [HomeController::class, 'index'])->name('admin.home');
-Route::resource('clasificaciones', ClasificacionController::class)->names('admin.clasificacion');
+Route::resource('clasificacions', ClasificacionController::class)->names('admin.clasificacions');
